@@ -14,4 +14,13 @@ span.addEventListener("click", () => {
     document.getElementById("name").textContent = character.name;
     document.getElementById("image").src = character.image;
     document.getElementById("image").alt = character.name;
-    document.getElementById("vote-count").textContent = character.votes;}});        
+    document.getElementById("vote-count").textContent = character.votes;}
+        
+const form = document.getElementById("votes-form");
+form.onsubmit = () => {
+  const input = document.getElementById("votes");
+  const voteCount = document.getElementById("vote-count");
+  voteCount.textContent = +voteCount.textContent + +input.value;
+  input.value = "";
+  return false;};
+});        
