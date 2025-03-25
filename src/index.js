@@ -1,4 +1,3 @@
-// Your code here
 document.addEventListener("DOMContentLoaded", async () => {
         const response = await fetch("db.json");
         const data = await response.json();
@@ -23,4 +22,10 @@ form.onsubmit = () => {
   voteCount.textContent = +voteCount.textContent + +input.value;
   input.value = "";
   return false;};
-});        
+
+  const resetBtn = document.getElementById("reset-btn");
+    resetBtn.addEventListener("click", () => {
+    document.getElementById("vote-count").textContent = 0;});
+    });    
+       
+
